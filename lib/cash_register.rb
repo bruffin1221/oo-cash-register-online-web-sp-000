@@ -15,7 +15,7 @@ class CashRegister
     @quantity=quantity
     @name<<name.split(" ") * quantity
     @price=price
-    @total+=price * @quantity
+    @total+=@price * @quantity
     @payment<<@total
     @transaction.push(name,@price, @total)
   end
@@ -36,24 +36,23 @@ class CashRegister
   end
 
   def void_last_transaction
-
+     @total-=@price * @quantity
   end
 
 end
 
-new_register=CashRegister.new
-new_register.add_item("apple", 0.99)
-new_register.add_item("tomato", 1.76)
-new_register.void_last_transaction
+#new_register=CashRegister.new
+#new_register.add_item("tomato", 1.76,2)
+#new_register.void_last_transaction
 
 
-a=[1,2,3,4,5,6,7,8,9,10,11]
-b=[1,2,3,4,5,6,7,8,9,10,11,12]
-b-a
-x=20
-y=20
-x+y
+#a=[1,2,3,4,5,6,7,8,9,10,11]
+#a.pop
 #a
+
+#a
+
+#a-b
 
 
 #a.slice!(-2..-1)
